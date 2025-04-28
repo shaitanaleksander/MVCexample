@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .product {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+        }
+
+        .product:last-child {
+            border-bottom: none;
+        }
+
+        .product h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #007BFF;
+        }
+
+        .product p {
+            margin: 0.2rem 0 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Product List</h1>
+    <div th:each="product : ${products}" class="product">
+        <h2 th:text="${product.name}">Product Name</h2>
+        <p th:text="${product.description}">Product Description</p>
+    </div>
+</div>
+</body>
+</html>
